@@ -1,9 +1,9 @@
-import { pgTable } from "drizzle-orm/pg-core";
+import { pgTable, integer, serial, varchar } from "drizzle-orm/pg-core";
 
 export const Users = pgTable('users', {
     id:serial('id').primaryKey(),
-    name:varChar('name').notNull(),
-    email: varChar('email').notNull(),
-    imageUrl: varChar('imageUrl').notNull(),
+    name:varchar('name').notNull(),
+    email: varchar('email').notNull(),
+    imageUrl: varchar('imageUrl').notNull(),
     credits:integer('credits').default(3)
 })
